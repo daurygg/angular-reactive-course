@@ -1,27 +1,29 @@
-# AngularReactiveCourse
+# Curso Gestión Reactiva en Angular 👨🏻‍💻
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+Este curso avanzado está diseñado para desarrolladores que buscan profundizar en la gestión reactiva dentro de Angular, entendiendo cómo aplicar patrones y técnicas que mejoran el rendimiento y la escalabilidad de las aplicaciones. A lo largo del curso, los participantes aprenderán a superar las limitaciones del estilo imperativo, adoptando un enfoque más declarativo y eficiente a través del uso de observables y flujos de datos reactivos.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clonar el proyecto e instalar el proyecto a través de **npm**
 
-## Code scaffolding
+```bash
+  git clone https://github.com/prophet-99/angular-reactive-course.git
+  cd angular-reactive-course
+  npm i
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Temas cubiertos
 
-## Build
+- **Módulo N° 1**: Introducción al Estilo Reactivo
+- **Módulo N° 2**: Gestión Reactiva
+- **Módulo N° 3**: Gestión de Estado Personalizado
+- **Módulo N° 4**: Composición Reactiva
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Stack Tecnológico
 
-## Running unit tests
+**Frontend:** Angular 18.0.0
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Referencias
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular.dev](https://angular.dev)
+- [EDteam](https://ed.team)

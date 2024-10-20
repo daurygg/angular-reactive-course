@@ -1,0 +1,21 @@
+.sh-card {
+  width: 360px;
+}
+
+.sh-chip {
+  transform: scale(0.8);
+  &--date {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  &--rate {
+    left: -0.8rem;
+  }
+}
+
+.sh-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

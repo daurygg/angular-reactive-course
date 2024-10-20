@@ -10,6 +10,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@core/*": ["src/app/core/*"]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
@@ -19,10 +23,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
