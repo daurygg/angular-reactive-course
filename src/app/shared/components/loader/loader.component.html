@@ -1,0 +1,5 @@
+<p-progressSpinner
+  class="sh-loader"
+  [class.has-overlay]="hasOverlay"
+  *ngIf="(loaderStateService.loader$ | async)"
+/>

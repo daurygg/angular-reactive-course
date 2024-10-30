@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { HomeStateService } from '@pages/home/home-state.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,4 +11,6 @@ import { Component } from '@angular/core';
     object-fit: cover;
   }`,
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  constructor(public homeStateService: HomeStateService) {}
+}
