@@ -13,6 +13,14 @@
         src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}"
         alt="Poster movie"
       />
+      <p-button
+        class="absolute sh-chip sh-chip--like"
+        icon="pi pi-heart"
+        [rounded]="true"
+        severity="info"
+        [outlined]="!isLike"
+        (click)="likeMovie()"
+       />
     </div>
   </ng-template>
   <h3 class="mt-0 mb-3">{{ movie.title }}</h3>
