@@ -5,6 +5,7 @@ import { BehaviorSubject, finalize, map, Observable, of, tap } from 'rxjs';
 import { type Movie } from '@core/models/movie.model';
 import { MoviesService } from '@core/services/movies.service';
 import { LoaderStateService } from '@shared/components/loader/loader-state.service';
+import { MovieVideo } from '@core/models/movie-video.model';
 
 @Injectable({
   providedIn: 'root',
@@ -54,6 +55,16 @@ export class HomeStoreService {
     success: boolean;
   }> {
     return this._moviesService.fakeLike(movieId);
+  }
+
+  public getVideos(movieId: number): Observable<MovieVideo[]> {
+    return this._moviesService.getVideos(movieId);
+  }
+
+  public getCurrentMovies(): Movie[] {
+    if (this._existMoviesInLocalStorage())
+      return this._getMoviesFromLocalStorage();
+    return [];
   }
 
   //* LOCAL STORAGE METHODS

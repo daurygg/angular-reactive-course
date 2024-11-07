@@ -1,0 +1,47 @@
+<section *ngIf="(movieWithVideos$ | async) as movie">
+  <h3 class="mt-0 mb-3">{{ movie.title }}</h3>
+  <article class="flex gap-3 overflow-hidden mb-3">
+    <img
+      class="h-auto border-round-md sh-image"
+      src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}"
+    />
+    <p class="m-0 text-600 sh-text">
+      {{ movie.overview }}
+    </p>
+  </article>
+  <article class="sh-videos">
+    <ng-container *ngIf="movie.videos.length > 0; else notContentTmpl">
+      <p-table [value]="movie.videos">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Tipo</th>
+            <th>Fuente</th>
+            <th>Visualizar</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-video>
+          <tr>
+            <td>{{ video.type }}</td>
+            <td>{{ video.site }}</td>
+            <td>
+              <a
+                class="p-ripple p-element p-button p-component p-button-link p-button-label"
+                href="https://www.youtube.com/watch?v={{video.key}}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver
+              </a>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </ng-container>
+  </article>
+</section>
+
+<ng-template #notContentTmpl>
+  <section class="text-center text-600 sh-not-content">
+    Sin videos, seleccione una card para comenzar 🕵🏻‍♀️!
+  </section>
+</ng-template>

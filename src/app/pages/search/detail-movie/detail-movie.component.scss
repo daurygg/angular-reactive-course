@@ -1,0 +1,24 @@
+.sh-image {
+  width: 300px;
+  object-fit: cover;
+  text-align: center;
+}
+
+.sh-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.sh-videos {
+  height: 30vh;
+  overflow-y: auto;
+}
+
+.sh-not-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
