@@ -1,0 +1,30 @@
+<p-card
+          class="sh-card"
+          styleClass="overflow-hidden h-full"
+        >
+          <ng-template pTemplate="header">
+            <div class="relative">
+              <p-chip
+                class="absolute sh-chip sh-chip--date"
+                styleClass="bg-gray-100 text-gray-700 font-semibold"
+                [label]="movie.release_date.toString()"
+              />
+              <img
+                src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}"
+                alt="Poster movie"
+              />
+            </div>
+          </ng-template>
+          <h3 class="mt-0 mb-3">{{ movie.title }}</h3>
+          <p class="m-0 mb-2 sh-content">
+            {{ movie.overview }}
+          </p>
+          <p class="m-0 relative h-2rem">
+            <p-chip
+              class="absolute sh-chip sh-chip--rate"
+              styleClass="bg-yellow-100 text-yellow-700 font-semibold"
+              icon="pi pi-star-fill"
+              [label]="movie.popularity.toString()"
+            />
+          </p>
+        </p-card>

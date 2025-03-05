@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeStateService } from '@pages/home/home-state.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
     object-fit: cover;
   }`,
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+  constructor(public homeStateService:HomeStateService){}
+}

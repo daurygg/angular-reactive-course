@@ -12,7 +12,9 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@core/*": ["src/app/core/*"]
+      "@core/*": ["src/app/core/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@shared/*": ["src/app/pages/shared/*"]
     },
     "esModuleInterop": true,
     "sourceMap": true,

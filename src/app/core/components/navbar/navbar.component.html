@@ -1,12 +1,17 @@
 <section class="flex justify-content-end align-items-center gap-2">
   <a class="p-ripple p-element flex px-3 py-2 align-items-center hover:surface-100 font-medium border-round cursor-pointer transition-duration-150 transition-colors">
     <img
-      class="mr-3 lg:mr-0 sh-thumb border-circle"
+      class="mr-3 sh-thumb border-circle"
       src="assets/user.webp"
     />
-    <div class="block lg:hidden">
-      <div class="text-900 font-medium line-height-1">Alexander Avila</div>
-      <span class="text-600 font-medium text-sm">Frontend Developer</span>
+    <div class="block" *ngIf="(homeStateService.homeData$ | async) as homeData">
+
+      <div class="text-900 font-medium line-height-1">
+        {{homeData.name}}
+      </div>
+      <span class="text-600 font-medium text-sm">
+        {{homeData.role}}
+      </span>
     </div>
   </a>
 </section>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {HomeStateService } from '@pages/home/home-state.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
     object-fit: cover;
   }`,
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  constructor(public homeStateService: HomeStateService){}
+}
