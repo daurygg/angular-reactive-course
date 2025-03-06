@@ -9,6 +9,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { MovieCardComponent } from './home/movie-card/movie-card.component';
+import { SharedModule } from "../shared/shared.module";
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [HomeComponent, SearchComponent, MovieCardComponent],
@@ -18,6 +20,8 @@ import { MovieCardComponent } from './home/movie-card/movie-card.component';
     CardModule,
     TabViewModule,
     ChipModule,
-  ],
+    SharedModule,
+    ButtonModule
+],
 })
 export class PagesModule {}

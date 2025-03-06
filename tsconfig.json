@@ -14,7 +14,8 @@
     "paths": {
       "@core/*": ["src/app/core/*"],
       "@pages/*": ["src/app/pages/*"],
-      "@shared/*": ["src/app/pages/shared/*"]
+      "@shared/*": ["src/app/pages/shared/*"],
+      "@store/*": ["src/app/store/*"]
     },
     "esModuleInterop": true,
     "sourceMap": true,

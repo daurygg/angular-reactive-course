@@ -7,6 +7,12 @@ import {type Movie } from '@core/models/movie.model';
   styleUrl: './movie-card.component.scss'
 })
 export class MovieCardComponent {
-
   @Input({required: true}) public movie!: Movie
+
+  public isLike = false;
+
+likeMovie() : void {
+  this.isLike = !this.isLike
+}
+
 }

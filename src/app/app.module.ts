@@ -5,12 +5,16 @@ import { provideHttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
-import { LoaderComponent } from './shared/components/loader/loader.component';
+//import { SharedModule } from 'primeng/api';
+import { SharedModule } from "./shared/shared.module";
+import { LoaderStateService } from './shared/components/services/loader-state.service';
+
+
 
 @NgModule({
-  declarations: [AppComponent, LoaderComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule],
-  providers: [provideHttpClient()],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, SharedModule],
+  providers: [provideHttpClient(),LoaderStateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
