@@ -11,14 +11,14 @@ export class HomeStoreService {
   private _moviesSubject = new BehaviorSubject<Movie[]>([]);
   public movies$ = this._moviesSubject.asObservable();
 
-  constructor(private _loaderStateService: LoaderStateService,   private MoviesServices: MoviesService,) {
+  constructor(private _loaderStateService: LoaderStateService,   private _movieServices: MoviesService,) {
     this._loadMovies();
    }
 
    private _loadMovies(): void {
      //Set Loader en true;
     this._loaderStateService.showLoader();
-    this.movies$ = this.MoviesServices.getMovies().pipe(
+    this.movies$ = this._movieServices.getMovies().pipe(
 
       finalize(()=> {
          //Set Loader en false;
@@ -31,5 +31,9 @@ export class HomeStoreService {
         if (filter === 'TOP') return popularity >= 1000;
         return popularity < 1000
       }) ),);
+    }
+
+    public likeMovie(movieId: number, isLiked: boolean): Observable<{success:boolean;}>{
+      return this._movieServices.fakeLike(movieId,isLiked);
     }
 }

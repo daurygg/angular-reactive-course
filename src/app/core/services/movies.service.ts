@@ -7,13 +7,14 @@ import { map, Observable, shareReplay } from 'rxjs';
   providedIn: 'root'
 })
 export class MoviesService {
-
+private _THE_MOVIE_DB_API = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=2024-01-01&release_date.lte=2024-12-31&sort_by=popularity.desc';
+private _JSON_PLACEHOLDER_API = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private _httpClient: HttpClient) { }
 
   getMovies(): Observable<Movie[]> {
 return this._httpClient
       .get<MovieFetch>(
-        'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=2024-01-01&release_date.lte=2024-12-31&sort_by=popularity.desc',
+        this._THE_MOVIE_DB_API,
         {
           headers: new HttpHeaders({
             Authorization:
@@ -25,4 +26,11 @@ return this._httpClient
         shareReplay()
       )
   }
+
+  public fakeLike(movieId: number, isLike: boolean): Observable<{success: boolean}>{
+    return this._httpClient.post<{success: boolean}>(
+      this._JSON_PLACEHOLDER_API,{ movieId, success:isLike }
+    )
+  }
+
 }
